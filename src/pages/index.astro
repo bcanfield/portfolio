@@ -5,6 +5,8 @@ import brandinImage from '~/assets/images/brandin-cartoon.png';
 
 import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
+import PersonalProject from '~/components/brandin/PersonalProject.astro';
+import ProfessionalProject from '~/components/brandin/ProfessionalProject.astro';
 
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
@@ -15,7 +17,9 @@ const metadata = {
 <Layout metadata={metadata}>
   <div class="flex flex-col w-full border border-yellow-500 items-center">
     <!-- Hero -->
-    <div class="flex border border-red-500 w-full max-w-5xl flex-col md:flex-row items-center gap-4 md:py-20 py-12 text-default">
+    <div
+      class="flex border border-red-500 w-full max-w-5xl flex-col md:flex-row items-center gap-4 md:py-20 py-12 text-default"
+    >
       <div class="max-w-[500px] flex flex-auto border-green-500 border">
         <Image
           class="rounded-xl bg-gray-500 shadow-lg z-10"
@@ -30,217 +34,105 @@ const metadata = {
           <div class="animation-container">
             <h1 class="animate-drive text-3xl font-bold tracking-tight md:text-2xl text-secondary">Driven</h1>
           </div>
-          <h1 class=" text-3xl md:text-2xl font-bold tracking-tight whitespace-nowrap	">Software Engineer</h1>
+          <h1 class="text-3xl md:text-2xl font-bold tracking-tight whitespace-nowrap">Software Engineer</h1>
         </div>
         <div class="flex flex-col font-medium text-lg gap-1">
           <span> Senior full-stack engineer based out of Dayton, Ohio.</span>
         </div>
         <div class="flex gap-1">
-          <!-- <Button variant="primary">Browse my Work</Button> -->
           <a class="btn btn-primary" href="#personal-projects">Browse my Work</a>
           <Button variant="secondary">Contact Me</Button>
         </div>
       </div>
     </div>
 
-
     <!-- Personal Projects -->
-    <div id="personal-projects" class="flex border border-green-500 w-full bg-primary flex-col items-center gap-4 md:py-20 py-12 text-default content-center align-middle text-center px-4">
+    <div
+      id="personal-projects"
+      class="flex border border-green-500 w-full bg-primary flex-col items-center gap-4 md:py-20 py-12 text-default content-center align-middle text-center px-4"
+    >
       <div class="flex flex-col justify-center border grow text-center lg:max-w-2xl max-w-xl border-red-500">
-        <h2 class="font-bold font-heading leading-tighter leading-tighter tracking-tighter text-heading mb-4 text-4xl md:text-5xl border">
+        <h2
+          class="font-bold font-heading leading-tighter leading-tighter tracking-tighter text-heading mb-4 text-4xl md:text-5xl border"
+        >
           Personal Projects
         </h2>
-        <h3 class="font-medium font-heading leading-tighter leading-tighter tracking-tighter text-heading mb-4 text-md  border">
-          Here are just a few of my personal projects. I spend alot of my free-time coding a number of things, but these are some of my favorites.
+        <h3
+          class="font-medium font-heading leading-tighter leading-tighter tracking-tighter text-heading mb-4 text-md border"
+        >
+          Here are just a few of my personal projects. I spend alot of my free-time coding a number of things, but these
+          are some of my favorites.
         </h3>
       </div>
 
       <!-- Project Grid -->
       <div class="grid lg:grid-cols-3 grid-cols-2 gap-4 border border-yellow-500 w-full max-w-7xl">
-
-        <!-- Project Card -->
-        <div class="border border-red-500 flex flex-col gap-1 text-start p-4 rounded-md bg-light dark:bg-dark">
-            <Image
-            class="rounded-xl bg-gray-500 shadow-lg z-10"
-            widths={[300, 500]}
-            layout="responsive"
-            src={brandinImage}
-            alt={'Brandin'}
-          />
-          <h2 class="font-bold font-heading leading-tighter leading-tighter tracking-tighter text-heading text-xl ">
-            Project 1
-          </h2>
-          <span class="font-medium font-heading leading-tighter leading-tighter tracking-tighter text-md ">
-            asdf  afsdfasdf asdfasdf asdfasdf
-          </span>
-          <div class="flex text-sm gap-1 flex-wrap font-medium">
-<span class="bg-primary rounded-sm px-1"> Typescript</span>
-<span class="bg-primary rounded-sm px-1"> Typescript</span>
-
-<span class="bg-primary rounded-sm px-1"> Typescript</span>
-
-<span class="bg-primary rounded-sm px-1"> Typescript</span>
-
-<span class="bg-primary rounded-sm px-1"> Typescript</span>
-
-<span class="bg-primary rounded-sm px-1"> Typescript</span>
-
-          </div>
-        </div>
-
-
-
-        <!-- Project Card -->
-        <div class="border border-red-500 flex flex-col gap-1 text-start p-4 rounded-md bg-light dark:bg-dark">
-            <Image
-            class="rounded-xl bg-gray-500 shadow-lg z-10"
-            widths={[300, 500]}
-            layout="responsive"
-            src={brandinImage}
-            alt={'Brandin'}
-          />
-          <h2 class="font-bold font-heading leading-tighter leading-tighter tracking-tighter text-heading text-xl ">
-            Project 1
-          </h2>
-          <span class="font-medium font-heading leading-tighter leading-tighter tracking-tighter text-md ">
-            asdf  afsdfasdf asdfasdf asdfasdf
-          </span>
-        </div>
-         <!-- Project Card -->
-         <div class="border border-red-500 flex flex-col gap-1 text-start p-4 rounded-md bg-light dark:bg-dark">
-          <Image
-          class="rounded-xl bg-gray-500 shadow-lg z-10"
-          widths={[300, 500]}
-          layout="responsive"
-          src={brandinImage}
-          alt={'Brandin'}
+        <PersonalProject
+          title="Project 1"
+          description="asdf  afsdfasdf asdfasdf asdfasdf"
+          image={brandinImage}
+          technologies={['Typescript', 'Docker']}
         />
-        <h2 class="font-bold font-heading leading-tighter leading-tighter tracking-tighter text-heading text-xl ">
-          Project 1
-        </h2>
-        <span class="font-medium font-heading leading-tighter leading-tighter tracking-tighter text-md ">
-          asdf  afsdfasdf asdfasdf asdfasdf
-        </span>
+        <PersonalProject
+          title="Project 1"
+          description="asdf  afsdfasdf asdfasdf asdfasdf"
+          image={brandinImage}
+          technologies={['Typescript', 'Docker']}
+        />
+        <PersonalProject
+          title="Project 1"
+          description="asdf  afsdfasdf asdfasdf asdfasdf"
+          image={brandinImage}
+          technologies={['Typescript', 'Docker']}
+        />
+        <PersonalProject
+          title="Project 1"
+          description="asdf  afsdfasdf asdfasdf asdfasdf"
+          image={brandinImage}
+          technologies={['Typescript', 'Docker']}
+        />
       </div>
-       <!-- Project Card -->
-       <div class="border border-red-500 flex flex-col gap-1 text-start p-4 rounded-md bg-light dark:bg-dark">
-        <Image
-        class="rounded-xl bg-gray-500 shadow-lg z-10"
-        widths={[300, 500]}
-        layout="responsive"
-        src={brandinImage}
-        alt={'Brandin'}
-      />
-      <h2 class="font-bold font-heading leading-tighter leading-tighter tracking-tighter text-heading text-xl ">
-        Project 1
-      </h2>
-      <span class="font-medium font-heading leading-tighter leading-tighter tracking-tighter text-md ">
-        asdf  afsdfasdf asdfasdf asdfasdf
-      </span>
-        
-    </div>
-     <!-- Project Card -->
-     <div class="border border-red-500 flex flex-col gap-1 text-start p-4 rounded-md bg-light dark:bg-dark">
-      <Image
-      class="rounded-xl bg-gray-500 shadow-lg z-10"
-      widths={[300, 500]}
-      layout="responsive"
-      src={brandinImage}
-      alt={'Brandin'}
-    />
-    <h2 class="font-bold font-heading leading-tighter leading-tighter tracking-tighter text-heading text-xl ">
-      Project 1
-    </h2>
-    <span class="font-medium font-heading leading-tighter leading-tighter tracking-tighter text-md ">
-      asdf  afsdfasdf asdfasdf asdfasdf
-    </span>
-  </div>
-      </div>
-      
-    
-
     </div>
 
-
-
-
-<!-- Professional Projects -->
-    <div id="professional-projects" class="flex border border-green-500 w-full  flex-col items-center gap-4 md:py-20 py-12 text-default pb-8 content-center align-middle text-center px-4">
+    <!-- Professional Projects -->
+    <div
+      id="professional-projects"
+      class="flex border border-green-500 w-full flex-col items-center gap-4 md:py-20 py-12 text-default pb-8 content-center align-middle text-center px-4"
+    >
       <div class="flex flex-col justify-center border grow text-center lg:max-w-2xl max-w-xl border-red-500">
-        <h2 class="font-bold font-heading leading-tighter leading-tighter tracking-tighter text-heading mb-4 text-4xl md:text-5xl border">
+        <h2
+          class="font-bold font-heading leading-tighter leading-tighter tracking-tighter text-heading mb-4 text-4xl md:text-5xl border"
+        >
           Professional Projects
         </h2>
-        <h3 class="font-medium font-heading leading-tighter leading-tighter tracking-tighter text-heading mb-4 text-md  border">
+        <h3
+          class="font-medium font-heading leading-tighter leading-tighter tracking-tighter text-heading mb-4 text-md border"
+        >
           Here are some of my professional projects. Feel free to contact me for additional details.
         </h3>
       </div>
 
       <!-- Project Grid -->
       <div class="grid lg:grid-cols-3 grid-cols-2 gap-4 border border-yellow-500 w-full max-w-7xl">
-
-        <!-- Project Card -->
-        <div class="border border-red-500 flex flex-col gap-1 text-start p-4 rounded-md bg-primary">
-        
-          <h2 class="font-bold font-heading leading-tighter leading-tighter tracking-tighter text-heading text-xl ">
-            Project 1
-          </h2>
-          <span class="font-medium font-heading leading-tighter leading-tighter tracking-tighter text-md ">
-            asdf  afsdfasdf asdfasdf asdfasdf
-          </span>
-          <div class="flex text-sm gap-1 flex-wrap font-medium">
-            <span class="bg-light dark:bg-dark rounded-sm px-1"> Typescript</span>
-            <span class="bg-secondary rounded-sm px-1"> Typescript</span>
-            
-            <span class="bg-secondary rounded-sm px-1"> Typescript</span>
-            
-            <span class="bg-secondary rounded-sm px-1"> Typescript</span>
-            
-            <span class="bg-secondary rounded-sm px-1"> Typescript</span>
-            
-            <span class="bg-secondary rounded-sm px-1"> Typescript</span>
-            
-                      </div>
-    
-        </div>
-
-
-
- <!-- Project Card -->
- <div class="border border-red-500 flex flex-col gap-1 text-start p-4 rounded-md bg-primary">
-        
-  <h2 class="font-bold font-heading leading-tighter leading-tighter tracking-tighter text-heading text-xl ">
-    Project 1
-  </h2>
-  <span class="font-medium font-heading leading-tighter leading-tighter tracking-tighter text-md ">
-    asdf  afsdfasdf asdfasdf asdfasdf
-  </span>
-</div>
- <!-- Project Card -->
- <div class="border border-red-500 flex flex-col gap-1 text-start p-4 rounded-md bg-primary">
-        
-  <h2 class="font-bold font-heading leading-tighter leading-tighter tracking-tighter text-heading text-xl ">
-    Project 1
-  </h2>
-  <span class="font-medium font-heading leading-tighter leading-tighter tracking-tighter text-md ">
-    asdf  afsdfasdf asdfasdf asdfasdf
-  </span>
-</div>
- <!-- Project Card -->
- <div class="border border-red-500 flex flex-col gap-1 text-start p-4 rounded-md bg-primary">
-        
-  <h2 class="font-bold font-heading leading-tighter leading-tighter tracking-tighter text-heading text-xl ">
-    Project 1
-  </h2>
-  <span class="font-medium font-heading leading-tighter leading-tighter tracking-tighter text-md ">
-    asdf  afsdfasdf asdfasdf asdfasdf
-  </span>
-</div>      </div>
-      
-    
-
+        <ProfessionalProject
+          title="Project 1"
+          description="asdf  afsdfasdf asdfasdf asdfasdf"
+          image={brandinImage}
+          technologies={['Typescript', 'Docker']}
+        />
+        <ProfessionalProject
+          title="Project 1"
+          description="asdf  afsdfasdf asdfasdf asdfasdf"
+          image={brandinImage}
+          technologies={['Typescript', 'Docker']}
+        />
+        <ProfessionalProject
+          title="Project 1"
+          description="asdf  afsdfasdf asdfasdf asdfasdf"
+          image={brandinImage}
+          technologies={['Typescript', 'Docker']}
+        />
+      </div>
     </div>
-
   </div>
-  
-
 </Layout>

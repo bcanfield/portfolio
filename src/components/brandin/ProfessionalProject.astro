@@ -1,0 +1,20 @@
+---
+interface ProfessionalProject {
+  title: string;
+  description: string;
+  technologies: Array<string>;
+}
+const { title, description, technologies } = Astro.props as ProfessionalProject;
+---
+
+<div class="border border-red-500 flex flex-col gap-1 text-start p-4 rounded-md bg-primary">
+  <h2 class="font-bold font-heading leading-tighter leading-tighter tracking-tighter text-heading text-xl">
+    {title}
+  </h2>
+  <span class="font-medium font-heading leading-tighter leading-tighter tracking-tighter text-md">
+    {description}
+  </span>
+  <div class="flex text-sm gap-1 flex-wrap font-medium">
+    {technologies.map((tech) => <span class="bg-light dark:bg-dark rounded-sm px-1">{tech}</span>)}
+  </div>
+</div>
