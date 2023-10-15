@@ -1,18 +1,21 @@
 ---
 import '~/assets/styles/tailwind.css';
 
-import { I18N } from "~/utils/config";
+import { I18N } from '~/utils/config';
+import grunge from '~/assets/images/grunge.png';
+// import googlePlayImg from '~/assets/images/google-play.png';
 
 import CommonMeta from '~/components/common/CommonMeta.astro';
 import Favicons from '~/components/Favicons.astro';
-import CustomStyles from "~/components/CustomStyles.astro"
-import ApplyColorMode from "~/components/common/ApplyColorMode.astro"
+import CustomStyles from '~/components/CustomStyles.astro';
+import ApplyColorMode from '~/components/common/ApplyColorMode.astro';
 import Metadata from '~/components/common/Metadata.astro';
-import SiteVerification  from "~/components/common/SiteVerification.astro"
-import Analytics  from "~/components/common/Analytics.astro"
+import SiteVerification from '~/components/common/SiteVerification.astro';
+import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
 
 import type { MetaData as MetaDataType } from '~/types';
+import { Image, Picture } from 'astro:assets';
 
 export interface Props {
   metadata?: MetaDataType;
@@ -22,9 +25,8 @@ const { metadata = {} } = Astro.props;
 const { language, textDirection } = I18N;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={language} dir={textDirection} class="2xl:text-[20px]">
-
   <head>
     <CommonMeta />
     <Favicons />
@@ -36,6 +38,13 @@ const { language, textDirection } = I18N;
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
+    <Image
+      alt="background"
+      class="fixed inset-0 w-full h-full leaf-pattern opacity-10 dark:opacity-50 z-10"
+      src={grunge}
+      height={1000}
+      width={1000}
+    />
     <slot />
 
     <BasicScripts />
