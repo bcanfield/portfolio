@@ -1,5 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
 
 import brandinImage from '~/assets/images/brandin-cartoon.png';
 
@@ -18,7 +19,7 @@ const metadata = {
   <div class="flex flex-col w-full border border-yellow-500 items-center">
     <!-- Hero -->
     <div
-      class="flex border border-red-500 w-full max-w-5xl flex-col md:flex-row items-center gap-4 md:py-20 py-12 text-default"
+      class="flex border border-red-500 w-full max-w-5xl flex-col md:flex-row items-center gap-4 md:py-20 py-12 text-default px-4"
     >
       <div class="max-w-[500px] flex flex-auto border-green-500 border">
         <Image
@@ -42,6 +43,15 @@ const metadata = {
         <div class="flex gap-1">
           <a class="btn btn-primary" href="#personal-projects">Browse my Work</a>
           <Button variant="secondary">Contact Me</Button>
+        </div>
+        <div class="flex gap-2 justify-end w-full border border-red-500">
+          <button title="Github" data-aw-social-share="github" data-aw-url={}
+            ><Icon name="tabler:brand-github" class="w-6 h-6 hover:text-muted" />
+          </button>
+          <button title="Linkedin" data-aw-social-share="linkedin" data-aw-url={}
+            ><Icon name="tabler:brand-linkedin" class="w-6 h-6 hover:text-muted" />
+          </button>
+          <button title="Email" data-aw-url={}><Icon name="tabler:mail" class="w-6 h-6 hover:text-muted" /></button>
         </div>
       </div>
     </div>
