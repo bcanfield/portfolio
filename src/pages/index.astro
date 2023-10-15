@@ -7,6 +7,8 @@ import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
+import Intro from '~/components/widgets/Intro.astro';
+import brandinImage from '~/assets/images/brandin-cartoon.png';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
@@ -20,6 +22,49 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
+
+  <Intro
+    items={[
+      {
+        title: 'Senior Full-Stack Engineer',
+        description:
+          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
+      },
+      // {
+      //   title: 'Styled using Tailwind CSS',
+      //   description:
+      //     'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
+      // },
+      // {
+      //   title: 'Cross-browser compatibility',
+      //   description:
+      //     'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
+      // },
+    ]}
+    image={{
+      src: brandinImage,
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <div class="animation-container">
+        <!-- <h1 class="driven-title animate-drive">Driven</h1> -->
+        <h1 class="animate-drive z-400">
+          <span class="text-3xl font-bold tracking-tight dark:text-white md:text-2xl">Driven {' '}</span>
+        </h1>
+      </div>
+      <div>
+        <!-- <h1 class="driven-title animate-drive">Driven</h1> -->
+        <h1>
+          <span class="text-4xl font-bold tracking-tight dark:text-white md:text-3xl">Software Developer</span>
+        </h1>
+      </div>
+
+      <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      </Fragment>
+    </Fragment>
+  </Intro>
 
   <Hero
     actions={[

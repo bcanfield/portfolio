@@ -1,0 +1,88 @@
+---
+import type { Content } from '~/types';
+import Headline from '../ui/Headline.astro';
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import Image from '~/components/common/Image.astro';
+import Button from '~/components/ui/Button.astro';
+import ItemGrid from '../ui/ItemGrid.astro';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline,
+  content = await Astro.slots.render('content'),
+  callToAction,
+  items = [],
+  columns,
+  image = await Astro.slots.render('image'),
+  isReversed = false,
+  isAfterContent = false,
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props as Content;
+---
+
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`max-w-7xl mx-auto bg-page pt-0 md:pt-0 lg:pt-0 ${classes?.container ?? ''}`}
+  bg={bg}
+>
+  <div class="mx-auto max-w-7xl p-0 md:p-4 md:px-8">
+    <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-10`}>
+      <div aria-hidden="true" class="mt-0 md:basis-1/2">
+        {
+          image && (
+            <div class="relative m-auto max-w-[500px]">
+              {typeof image === 'string' ? (
+                <Fragment set:html={image} />
+              ) : (
+                <Image
+                  class="mx-auto w-full rounded-xl bg-gray-500 shadow-lg"
+                  width={500}
+                  height={500}
+                  widths={[400, 768]}
+                  layout="responsive"
+                  {...(image as any)}
+                />
+              )}
+            </div>
+          )
+        }
+      </div>
+      <div class="md:basis-1/2 self-center md:mt-0 mt-4 flex flex-col gap-4">
+        {content && <div class="text-lg dark:text-slate-400" set:html={content} />}
+        <div class="font-medium">
+          Senior Full-Stack Engineer based out of Dayton, Ohio. I am currently specializing in Next.js, React, and
+          Typescript.
+        </div>
+
+        <div class="flex">
+          <div class="text-primary">
+            <Button variant="primary">See my Work</Button>
+          </div>
+          <div class="]text-primary">
+            <Button variant="secondary">Contact Me</Button>
+          </div>
+        </div>
+
+        <!-- <ItemGrid
+          items={items}
+          columns={columns}
+          defaultIcon="tabler:check"
+          classes={{
+            container: `gap-y-4 md:gap-y-8`,
+            panel: 'max-w-none',
+            title: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+            description: 'text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2',
+            icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1',
+            action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+          }}
+        /> -->
+      </div>
+    </div>
+  </div>
+</WidgetWrapper>

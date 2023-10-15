@@ -2,7 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@keyframes drive {
+  0% {
+    transform: translate(-100%, -100%) rotate(-30deg);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(-80%, -80%) rotate(-30deg);
+  }
+  40% {
+    transform: translate(-60%, -60%) rotate(-30deg);
+  }
+  60% {
+    transform: translateX(-40, -40%) rotate(-30deg);
+  }
+  80% {
+    transform: translateX(-20%, -20%)  rotate(-30deg);
+  }
+  100% {
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
+
+
 @layer utilities {
+  .animate-drive {
+    animation: drive 2s forwards ease-in-out;
+  }
+  
   .bg-page::before {
     content: '';
     position: fixed;
