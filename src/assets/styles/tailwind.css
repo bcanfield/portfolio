@@ -77,7 +77,10 @@
 
   .btn-secondary:hover {
     @apply bg-[var(--aw-color-primary-darker)];
-    
+  }
+  .scroll-header > div:first-child {
+    @apply bg-[var(--aw-color-bg-page-secondary)] md:backdrop-blur-md border-b border-[var(--aw-color-bg-page-primary)] opacity-95;
+    box-shadow: 0 0 0.75rem 0 var(--aw-color-bg-page-primary);
   }
 }
 
