@@ -60,19 +60,24 @@
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center rounded-full border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200  focus:ring-2 focus:ring-offset-2 cursor-pointer;
+    @apply inline-block py-2 px-4 border border-default rounded cursor-pointer text-base font-medium transition duration-300 ease-in-out;
   }
 
   .btn-primary {
-    @apply btn font-semibold;
+    @apply btn bg-[var(--aw-color-primary)]; /* Use primary color for primary button */
+  }
+
+  .btn-primary:hover {
+    @apply bg-[var(--aw-color-primary-darker)]; /* Darker shade of green on hover */
   }
 
   .btn-secondary {
-    @apply btn;
+    @apply btn bg-transparent; /* Use secondary color for secondary button */
   }
 
-  .btn-tertiary {
-    @apply btn border-none shadow-none text-muted;
+  .btn-secondary:hover {
+    @apply bg-[var(--aw-color-primary-darker)];
+    
   }
 }
 
