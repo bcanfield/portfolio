@@ -3,13 +3,7 @@ import Image from '../common/Image.astro';
 import { Icon } from 'astro-icon/components';
 import type { PersonalProject } from '~/projects';
 
-// export interface PersonalProject {
-//   title: string;
-//   description: string;
-//   image: ImageProps['src'];
-//   technologies: Array<{ name: string; icon?: string }>;
-// }
-const { title, description, image, technologies } = Astro.props as PersonalProject;
+const { title, description, image, technologies, link } = Astro.props as PersonalProject;
 ---
 
 <div class="flex flex-col gap-1 text-start p-4 rounded-md bg-light dark:bg-dark z-20">
@@ -20,9 +14,22 @@ const { title, description, image, technologies } = Astro.props as PersonalProje
     src={image}
     alt={'Brandin'}
   />
-  <h2 class="font-bold font-heading leading-tighter leading-tighter tracking-tighter text-heading text-xl">
-    {title}
-  </h2>
+  <div class="flex justify-between">
+    <h2 class="font-bold font-heading leading-tighter leading-tighter tracking-tighter text-heading text-xl">
+      {title}
+    </h2>
+    {
+      link && (
+        <a
+          href={link}
+          class="rounded-sm px-1 flex items-center gap-x-0.5 text-sm text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
+        >
+          <Icon name="tabler:link" class="w-4 h-4" /> <span>Project Link</span>
+        </a>
+      )
+    }
+  </div>
+
   <span class="font-medium font-heading leading-tighter leading-tighter tracking-tighter text-md">
     {description}
   </span>
