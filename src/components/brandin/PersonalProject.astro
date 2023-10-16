@@ -1,14 +1,14 @@
 ---
-import type { ImageProps } from '~/utils/images-optimization';
 import Image from '../common/Image.astro';
 import { Icon } from 'astro-icon/components';
+import type { PersonalProject } from '~/projects';
 
-export interface PersonalProject {
-  title: string;
-  description: string;
-  image: ImageProps['src'];
-  technologies: Array<{ name: string; icon?: string }>;
-}
+// export interface PersonalProject {
+//   title: string;
+//   description: string;
+//   image: ImageProps['src'];
+//   technologies: Array<{ name: string; icon?: string }>;
+// }
 const { title, description, image, technologies } = Astro.props as PersonalProject;
 ---
 

@@ -1,0 +1,42 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import brandinImage from '~/assets/images/brandin-cartoon.png';
+
+import Image from '~/components/common/Image.astro';
+---
+
+<div class="flex w-full max-w-5xl flex-col md:flex-row items-center md:gap-16 gap-8 md:py-20 py-12 text-default px-4">
+  <div class="max-w-[500px] flex flex-auto">
+    <Image
+      class="rounded-xl bg-gray-500 shadow-lg z-10"
+      widths={[400, 768]}
+      layout="responsive"
+      src={brandinImage}
+      alt={'Brandin'}
+    />
+  </div>
+  <div class="flex flex-col items-start gap-4 md:whitespace-nowrap whitespace-normal">
+    <div class="flex items-center gap-2 flex-wrap">
+      <div class="animation-container">
+        <h1 class="animate-drive text-3xl font-bold tracking-tight md:text-2xl text-secondary">Driven</h1>
+      </div>
+      <h1 class="text-3xl md:text-2xl font-bold tracking-tight whitespace-nowrap">Software Engineer</h1>
+    </div>
+    <div class="flex flex-col font-medium text-lg gap-1">
+      <span> Senior full-stack engineer based out of Dayton, Ohio.</span>
+    </div>
+    <div class="flex gap-1">
+      <a class="btn btn-primary" href="#personal-projects">Browse my Work</a>
+    </div>
+    <div class="flex gap-4 justify-start w-full">
+      <button title="Github" data-aw-social-share="github" data-aw-url={}
+        ><Icon name="tabler:brand-github" class="w-6 h-6 hover:text-muted" />
+      </button>
+      <button title="Linkedin" data-aw-social-share="linkedin" data-aw-url={}
+        ><Icon name="tabler:brand-linkedin" class="w-6 h-6 hover:text-muted" />
+      </button>
+      <button title="Email" data-aw-url={}><Icon name="tabler:mail" class="w-6 h-6 hover:text-muted" /></button>
+    </div>
+  </div>
+</div>

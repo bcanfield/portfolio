@@ -1,11 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
+import type { ProfessionalProject } from '~/projects';
 
-interface ProfessionalProject {
-  title: string;
-  description: string;
-  technologies: Array<{ name: string; icon?: string }>;
-}
 const { title, description, technologies } = Astro.props as ProfessionalProject;
 ---
 
