@@ -1,13 +1,12 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
 import { Icon } from 'astro-icon/components';
+import Layout from '~/layouts/PageLayout.astro';
 
 import brandinImage from '~/assets/images/brandin-cartoon.png';
 
-import Image from '~/components/common/Image.astro';
-import Button from '~/components/ui/Button.astro';
 import PersonalProject from '~/components/brandin/PersonalProject.astro';
 import ProfessionalProject from '~/components/brandin/ProfessionalProject.astro';
+import Image from '~/components/common/Image.astro';
 
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
@@ -42,7 +41,6 @@ const metadata = {
         </div>
         <div class="flex gap-1">
           <a class="btn btn-primary" href="#personal-projects">Browse my Work</a>
-          <Button variant="secondary">Contact Me</Button>
         </div>
         <div class="flex gap-4 justify-start w-full">
           <button title="Github" data-aw-social-share="github" data-aw-url={}

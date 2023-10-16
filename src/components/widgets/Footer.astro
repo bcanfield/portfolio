@@ -52,8 +52,15 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
             <div class="dark:text-gray-300 font-medium mb-2">{title}</div>
             {links && Array.isArray(links) && links.length > 0 && (
               <ul class="text-sm">
-                {links.map(({ text, href, ariaLabel }) => (
-                  <li class="mb-2">
+                {links.map(({ text, href, ariaLabel, icon }) => (
+                  <li class="mb-2 flex gap-1 items-center">
+                    {icon && (
+                      <Icon
+                        name={icon}
+                        class="w-4 h-4 hover:text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
+                      />
+                    )}
+
                     <a
                       class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
                       href={href}
@@ -76,7 +83,7 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
             {socialLinks.map(({ ariaLabel, href, text, icon }) => (
               <li>
                 <a
-                  class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                  class=" hover:text-muted focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
                   aria-label={ariaLabel}
                   href={href}
                 >
